@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실전연습16</title>
+<style>
+select {
+	width : 200px;
+}
+button#play {
+	border : 1px solid blue;
+	border-radius : 2px;	
+}
+button#next {
+	border : 1px solid green;
+	border-radius : 3px;
+}
+button#play:hover {
+	border-width : 2px;
+}
+button#next:hover {
+	border-width : 2px;
+}
+</style>
+</head>
+<body>
+<h3>나만의 플레이 리스트 연속 재생</h3>
+<hr>
+<p>※ PLAY는 연속하여 자동 재생, 마우스로 원하는 곡을 선택 가능</p>
+<hr>
+<audio id="audio" controls>브라우저 지원 불가ㅠㅠ</audio>
+<p>
+<select id="select" size=3 onchange="myplay()">
+	<option value="a.mp3" selected>사랑합니다-워너비</option>
+	<option value="b.mp3">May be-이루마</option>
+	<option value="c.mp3">잊었니-이승철</option>
+	<option value="d.mp3">Baby Baby-포맨</option>
+</select>
+<button id="play" onclick="control(event)">play</button>
+<button id="next" onclick="control(event)">next</button>
+<p>
+<div id="msg">현재 연주되는 곡명이 보입니다.</div>
+<script>
+var divEmt = document.getElementById("msg");
+var audio = document.getElementById("audio");
+var select = document.getElementById("select");
+var index = 0; // 처음 연주하는 곡
+
+function control(e) {
+	if(e.target.id == "play") { // play 버튼 클릭
+		myplay(index); // 현재 곡
+	}
+	else if(e.target.id == "next") { // next 버튼 클릭
+		index++; // 다음 곡
+		index %= select.length;
+		myplay(index);
+		select.selectedIndex = index;
+	}
+}
+
+audio.onended = function (e) { 
+	index++; 
+	index %= select.length;
+	myplay(index);
+}
+
+function myplay(n) { 
+	index = n;
+	audio.src = select.options[index].value;
+	audio.load();
+	audio.play(); 
+	divEmt.innerHTML = select.options[index].value + " 재생중^^";
+}
+
+function changeplay() {
+	myplay(select.selectedIndex);
+}
+</script>
+</body>
+</html>

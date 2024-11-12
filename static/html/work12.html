@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>실전연습12</title>
+<script>
+function addItem(parent) {
+	var text = prompt("김치 볶음밥 만드는 과정을 입력하세요", "");
+	if(text == null || text == "")
+		return;
+	
+	var liObj = document.createElement("li");
+	liObj.innerHTML = text;
+	parent.appendChild(liObj);
+	
+}
+</script>
+</head>
+<body>
+<h3>김치 볶음밥 만드는 최상의 레시피</h3>
+<hr>
+<ol type="A" style="background-color:yellow"
+	onclick="addItem(this)">
+   <li>김치, 파, 재료를 썬다!</li>
+</ol>
+<img src="kim.jpg">
+</body>
+</html>

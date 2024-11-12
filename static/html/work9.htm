@@ -1,0 +1,23 @@
+<html><head><title> 실전예제9:사진앨범제작 </title>
+<SCRIPT LANGUAGE="JavaScript">
+        <!-- 
+            term = 500        //1초 간격으로 이미지 변화하기 설정
+            mm = 1             //최초이미지 번호 부여
+            graphic = new Array()       // 이미지 파일을 미리 읽기
+            for(i = 1; i <= 4; i++) {
+                graphic[i] = new Image()
+                graphic[i].src = "Egypt" + i + ".jpg"
+            }
+
+            // 변환 이미지를 보여주는 함수
+            function anigraphic() {
+                document.imageFile.src = graphic[mm].src
+                mm++
+                if(mm > 4) mm = 1
+            }        // 자바스크립트 끝 -->
+        </SCRIPT></head><BODY bgColor="black"><center>
+<h3>* <font color="white">이집트를 감상합시다!!</h3><P>
+<IMG  NAME="imageFile" SRC="Egypt1.jpg" onLoad="setTimeout('anigraphic()', term)">
+</center></BODY></html>
+
+

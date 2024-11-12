@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html><head>
+<title>실전연습20</title>
+<style>
+* {
+margin: 0; padding: 0;
+font-family: '맑은 고딕', 'Malgun Gothic', Gothic, sans-serif;
+}
+a { text-decoration: none; }
+li { list-style: none; }
+.pull-left { float: left; }
+.pull-right { float:right; }
+
+body {
+width: 960px; margin: 0 auto;
+background: #EfE6Ec;
+}
+#page-wrapper {
+background: white;
+margin: 40px 0; padding: 10px 20px;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(100, 100, 100, 0.9);
+}
+
+#main-header { padding: 40px 50px; }
+.master-title {
+font-size: 30px;
+color: #123456;
+}
+.master-description {
+font-size: 11px; font-weight: 500;
+color: #383838;
+}
+
+#main-navigation {
+border-top: 1px solid #C8C8C8;
+border-bottom: 1px solid #C8C8C8;
+margin-bottom: 20px;
+height: 40px;
+}
+.outer-menu-item {
+float: left;
+position: relative;
+}
+.outer-menu-item:hover {
+background: black;
+color: white
+}
+.menu-title {
+display: black;
+height: 30px; line-height: 30px;
+text-align: center;
+padding: 5px 20px;
+}
+.inner-menu {
+display: none;
+position: absolute;
+top: 40px; left: 0;
+width: 100%;
+background: white;
+box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+z-index: 1000;
+text-align: center
+}
+.inner-menu-item > a {
+display: block;
+padding: 5px 10px;
+color: black
+}
+.inner-menu-item > a:hover {
+background: black;
+color: white;
+}
+
+.search-bar {
+height: 26px;
+padding: 7px;
+}
+.input-search {
+display: block;
+float: left;
+background-color: #FFFFFF;
+border: 1px solid #CCCCCC;
+border-radius: 15px 0 0 15px;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+width: 120px; height: 24px;
+padding: 0 0 0 10px;
+font-size: 12px;
+color: #555555;
+}
+.input-search:focus {
+border-color: rgba(82, 168, 236, 0.8);
+outline: 0;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.input-search-submit {
+display: block;
+float: left;
+width: 50px; height: 26px;
+border-radius: 0 15px 15px 0;
+border: 1px solid #CCCCCC;
+margin-left: -1px;
+
+vertical-align: top;
+display: inline-block;
+}
+
+#content { overflow: hidden; }
+#main-section {
+float: left;
+width: 710px;
+}
+#main-aside {
+float: right;
+width: 200px;
+}
+
+article {
+padding: 0 10px 20px 10px;
+border-bottom: 1px solid #C8C8C8;
+}
+.article-header { padding: 20px 0; }
+.article-title {
+font-size: 25px;
+font-weight: 500;
+padding-bottom: 10px;
+}
+.article-date { font-size: 13px; }
+.article-body {
+font-size: 14px;
+}
+
+
+.aside-list { padding: 10px 0 30px 0; }
+.aside-list > h3 {
+font-size: 15px;
+font-weight: 600;
+}
+
+.search-bar {
+height: 26px;
+padding: 7px;
+}
+.input-search {
+display: block;
+float: left;
+background-color: #FFFFFF;
+border: 1px solid #CCCCCC;
+border-radius: 15px 0 0 15px;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+width: 120px; height: 24px;
+padding: 0 0 0 10px;
+font-size: 12px;
+color: #555555;
+}
+.input-search:focus {
+border-color: rgba(82, 168, 236, 0.8);
+outline: 0;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.input-search-submit {
+display: block;
+float: left;
+width: 50px; height: 26px;
+border-radius: 0 15px 15px 0;
+border: 1px solid #CCCCCC;
+margin-left: -1px;
+vertical-align: top;
+
+display: inline-block;
+}
+
+#content { overflow: hidden; }
+#main-section {
+float: left;
+width: 710px;
+}
+#main-aside {
+float: right;
+width: 200px;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function () {
+$('.outer-menu-item').hover(function () {
+$(this).find('.inner-menu').show();
+}, function () {
+$(this).find('.inner-menu').hide();
+});
+});
+</script>
+
+</head>
+<body>
+<div id="page-wrapper">
+<header id="main-header">
+<hgroup>
+<h1 class="master-title">프로세서 Ko</h1>
+<h2 class="master-description">Aging Gracefully</h2>
+</hgroup>
+</header>
+<nav id="main-navigation">
+<div class="pull-left">
+<ul class="outer-menu">
+<li class="outer-menu-item">
+<span class="menu-title">강의노트</span>
+<ul class="inner-menu">
+<li class="inner-menu-item"> <a href= "#"> MIS</a> </li>
+<li class="inner-menu-item"> <a href= "#"> DSS</a> </li>
+<li class="inner-menu-item"> <a href= "#"> CRM</a> </li>
+</ul>
+</li>
+<li class="outer-menu-item">
+<span class="menu-title">TeamPaly</span>
+<ul class="inner-menu">
+<li class="inner-menu-item"> <a href= "#"> Who moved....</a> </li>
+<li class="inner-menu-item"> <a href= "#"> Good to Great</a> </li>
+<li class="inner-menu-item"> <a href= "#"> First Pengins</a> </li>
+</ul>
+</li>
+<li class="outer-menu-item">
+<span class="menu-title">ReadingList</span>
+<ul class="inner-menu">
+<li class="inner-menu-item"> <a href= "#"> 백기사</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 휴리스틱</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 최적해</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 만족해</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 논술쓰기</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 자본주의</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 도덕경</a> </li>
+<li class="inner-menu-item"> <a href= "#"> 순수이성비판</a> </li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="pull-right">
+<div class="search-bar">
+<form>
+<input type="text" class="input-search" / >
+<input type="submit" class="input-search-submit" value= "검색" / >
+</form>
+</div>
+</div>
+</nav>
+<div id="content">
+<section id="main-section">
+<article>
+<div class="article-header">
+<h1 class="article-title">경영정보의 개요</h1>
+<p class="article-date">2020년 03월 11일</p>
+</div>
+<div class="article-body">
+<img src="ch1.jpg" width="450px">
+<br / >
+<br / >
+<p>Fast Drying Concreate</p>
+<br / >
+</div>
+</article>
+<article>
+<div class="article-header">
+<h1 class="article-title">경영정보시스템의 종류</h1>
+<p class="article-date">2020년 04월 20일</p>
+</div>
+<div class="article-body">
+<img src="IBM.jpg" width="450px" >
+<br / >
+<br / >
+<p>Innovative product and service leadership.</p>
+<br / >
+</div>
+</article>
+</section>
+<aside id="main-aside">
+<div class="aside-list">
+<h3> 목 차</h3>
+<ul>
+<li> <a href= "#"> 제 1 장</a> </li>
+<li> <a href= "#"> 제 2 장</a> </li>
+<li> <a href= "#"> 제 3 장</a> </li>
+<li> <a href= "#"> 제 4 장</a> </li>
+<li> <a href= "#"> 제 5 장</a> </li>
+</ul>
+</div>
+<div class="aside-list">
+<h3> 최근검색</h3>
+<ul>
+<li> <a href= "#"> 제 2 장</a> </li>
+<li> <a href= "#"> 제 4 장</a> </li>
+<li> <a href= "#"> 제 3 장</a> </li>
+<li> <a href= "#"> 제 1 장</a> </li>
+</ul>
+</div>
+</aside>
+</div>
+<footer id="main-footer">
+<a href= "#">Copyright By Ko Min Jung</a>
+</footer>
+</div>
+</body>
+</html>

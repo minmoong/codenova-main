@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실전연습15</title>
+<script>
+var colors = ["blue", "red", "green", "yellow", "gray"];
+var dang = ["민주당", "자한당", "바미당", "정의당", "무소속"];
+var canvas;
+var context;
+var inOb;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	context = canvas.getContext("2d");
+	inOb = document.getElementsByClassName("num");	
+}
+function drawChart() {
+	var total = 0; 
+	for(var i=0; i<inOb.length; i++) { 
+		var n = parseInt(inOb[i].value);
+		if(isNaN(n) | n <= 0) 
+			inOb[i].value = 0; 
+		else
+			total += parseInt(inOb[i].value); 
+	}
+	
+	if(total == 0) 
+		return; 
+
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	
+	var x = canvas.width/2; 
+	var y = canvas.height/2; 
+	var small = (x < y)?x:y;  
+	var radius = small - 20; 
+	var startAngle = 0;
+	var endAngle = 0;
+	for(var i=0; i<inOb.length; i++) {
+		var n = parseInt(inOb[i].value);
+		if(n == 0)
+			continue; 
+		var deg = 360*n/total;
+		var rad = deg*Math.PI/180;
+		endAngle = startAngle + rad;
+	
+		context.beginPath();
+		context.moveTo(x, y);
+		context.arc(x, y, radius, startAngle, endAngle); 
+		context.closePath(); 		
+		context.strokeStyle = colors[i];
+		context.fillStyle = colors[i];
+		context.fill(); 
+		context.stroke(); 
+		startAngle = endAngle;
+	}
+	
+	context.font = "normal 15px gothic";
+	context.fillStyle = "blue";
+	for(var i=0;i<inOb.length; i++) {
+		var n = parseInt(inOb[i].value);
+		var percentage = Math.floor(n*100/total);
+		context.fillText(dang[i] + " 지지율" + percentage + "% : " + colors[i], 10, 30 + i*16);
+	}	
+}
+</script>
+</head>
+<body onload="init()">
+<h3> 정당별 지지율 조사 결과
+</h3>
+<hr>
+민주당 지지<input type="number" id="a" class="num" value="0"> 명
+자한당 지지<input type="number" id="b" class="num" value="0"> 명 <br> 
+바미당 지지 <input type="number" id="c" class="num" value="0"> 명
+정의당 지지<input type="number" id="d" class="num" value="0"> 명 <br>  
+무소속 지지 <input type="number" id="f" class="num" value="0"> 명 
+<input type="button" value="결과보기" onclick="drawChart()"><br>
+<canvas id="canvas" width="500" height="400" style="background-color:ivory">
+</canvas>
+</body>
+</html>

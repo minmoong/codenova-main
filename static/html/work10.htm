@@ -1,0 +1,36 @@
+<html><head><title>실전연습10:상품주문 제작</title>
+<script language="JavaScript">
+<!--
+	function check(frm){
+		if ( frm.qty.value == "" ) {
+			alert("[수 량]을 입력하세요!");
+			frm.qty.focus();
+			return;
+		}
+		
+	frm.submit();
+	}
+-->
+</script></head>
+<body>
+<center>
+<h2><u>침구 구매</u></h2>
+<table border=0 cellpadding=5 cellspacing=1>
+<tr valign=top>
+	<td width=140>
+	<center><img width=120 height=120 src="bed.jpg"></center></td>
+	<td>
+	<b>[상품명] 옥돌 침대</b><br>
+	<b>[한정수량] 100 </b><br>
+	<b>[시장가]<font color=blue>196,000 원</font></b><br>
+	<b>[공구가]<font color=red>89,800 원</font></b><br>
+	<form name="frmbuy" action="ok.html">
+		<b>[수 량]<input type="text" name="qty" size=10>&nbsp;
+		<input type=button value='구입' onClick="check(frmbuy);">
+	</form>
+	</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

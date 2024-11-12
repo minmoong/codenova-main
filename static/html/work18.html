@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실전연습18</title>
+<script>
+//전역 변수
+var canvas, context; 
+
+function init() {
+	canvas = document.getElementById("myPainting");
+	context = canvas.getContext("2d");
+	context.lineWidth = document.getElementById("widIn").value;	
+	context.strokeStyle = document.getElementById("colIn").value;
+
+	canvas.addEventListener("mousemove", function (e) { move(e) }, false);
+	canvas.addEventListener("mouseenter", function (e) { over(e) }, false);	
+	canvas.addEventListener("mouseleave", function (e) { out(e) }, false);		
+}
+
+var prevX=0, prevY=0;
+var inbound=false;
+function move(e) {
+	var curX = e.offsetX;
+	var curY = e.offsetY;
+		
+	if(!inbound) {
+		prevX = curX; prevY = curY; inbound = true;
+	}	
+	context.beginPath();
+	context.moveTo(prevX, prevY);
+	context.lineTo(curX, curY);
+	context.stroke();
+	prevX = curX; prevY = curY;
+}
+function over(e) {
+	inbound = true;
+	prevX = e.offsetX;
+	prevY = e.offsetY;
+}
+function out(e) {
+	inbound = false;
+}
+</script></head>
+<body onload="init()">
+<h3>나만의 작은 그림판</h3>
+<hr>
+선두께 :<input type="number" id="widIn" value="5"
+	min="0" max="50" step="1" onchange="context.lineWidth=this.value">
+선 색 : <input type="color" id="colIn" value="#00f420" onchange="context.strokeStyle=this.value">
+<br><br>
+<canvas id="myPainting" style="background-color:ivory"
+	 width="300" height="400"></canvas>	 
+</body>
+</html>

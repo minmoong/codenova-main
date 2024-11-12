@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실전연습17</title>
+<style>
+body {
+	background-image : url("back.gif");
+	background-size : 100%;
+	background-repeat : no-repeat;
+}
+div.flower {
+	position : absolute;
+           	font-size : 30px;
+	color : yellow;
+	padding : 0px;
+	margin : 0px;
+}
+</style>
+<script>
+var flower = new Array(50);					
+var x = new Array(50);						
+var y = new Array(50);						
+var flowerFall = new Array(50);           
+var flowerWind = new Array(50);          	
+var step = new Array(50);                  
+
+function fall() {
+	for(i=0; i<50; i++){
+		y[i] += flowerFall[i]          
+		x[i] += Math.cos(flowerWind[i]);  	
+		if(y[i] >= window.innerHeight-60) {  
+			x[i] = Math.floor(Math.random()*window.innerWidth);      
+			y[i] = 0;
+			flowerFall[i] = Math.random()*2+2;               
+		}
+
+		if(x[i] >= window.innerWidth-50) x[i] = window.innerWidth - 50;  
+		else if(x[i] < 0) x[i] = 50;
+		
+		flower[i].style.top = y[i] + "px";     
+		flower[i].style.left = x[i] + "px";
+
+		flowerWind[i] += step[i]; 
+	}
+	setTimeout("fall()",50);
+}
+
+</script>
+</head>
+<body onload="fall()">
+<script>
+makeflower(); 
+
+function makeflower() {
+	for(var i=0; i<50; i++) { 
+		x[i] = Math.floor(Math.random()*window.innerWidth-10);       
+		y[i] = Math.floor(Math.random()*window.innerHeight+10); 	
+		flowerFall[i] = Math.random()*2+2;               
+		flowerWind[i] = 1;                              
+		step[i] = Math.random()*0.1+0.05;        
+		
+		
+		var divt = "<div class='flower' id=flowerobj" + i
+					+ " style='top:" + x[i] + "px;left:" + y[i] + "px'>*</div>";
+		document.write(divt);
+		
+		flower[i] = document.getElementById("flowerobj"+i)
+	}
+}
+</script>
+</body>
+</html>

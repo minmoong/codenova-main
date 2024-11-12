@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실전연습13</title>
+<script>
+var text=["1963년에 함께 개봉했으나 예술적 평가는 양극단을 달리는 장-다니엘 폴레의 「지중해」와 존 스터지스의 「대탈주」. ‘영화’의 시작이 된 조르주 멜리어스의 「달나라 여행」. 그리고 최초의 유성 영화",
+          "수상 내역, 포스터, 줄거리, 배우, 감독 등 기본 정보를 상세하게 수록한 것은 물론, 알려지지 않은 뒷이야기까지 흥미롭게 구성",
+          "영화 편집장이자 영국국립영화극장의 편성 책임자인 제프 앤드류, 시나리오 작가이자 영화 감독 아디사크디 탄티메드 등 여러 영화 전문가가 집필진으로 참여",
+          "중요 플롯 해설과 통찰력 넘치는 논평, 문화적･역사적 맥락을 간결하게 설명하고, 널리 알려지지 않은 이면의 이야기"];
+var comm;
+
+function init() {
+	comm = document.getElementById("comm");	
+
+	var liArray = document.getElementsByTagName("li");
+	for(i=0; i<liArray.length; i++) {
+		liArray[i].addEventListener("mouseover", over, false);
+		liArray[i].addEventListener("mouseout", hidecomm, false);	
+	}
+}
+
+function over(e) {
+	var n=0;
+	switch(e.target.id) {
+		case "l0" : n = 0; break;
+		case "l1" : n = 1; break;
+		case "l2" : n = 2; break;
+		case "l3" : n = 3; break;
+	}
+	setcomm(text[n], e);	
+}
+
+function setcomm(comment, e) {
+	comm.innerHTML = comment;
+	comm.style.left = e.clientX + "px";
+	comm.style.top = e.clientY + "px";
+	comm.style.border = "1px solid green";
+	comm.style.background = "ivory";
+	comm.style.visibility = "visible";
+	comm.style.width = "300px";
+	comm.style.height = "80px";
+}
+
+function hidecomm() {
+	comm.style.visibility = "hidden";
+}
+
+</script>
+</head>
+<body onload="init()">
+<h3>영화제목에 마우스를 올리면 설명이 보입니다!</h3>
+<hr>
+<h3> 죽기전에 꼭 봐야할 영화</h3>
+<ul>
+	<li id="l0">재즈싱어</li>
+	<li id="l1">글래디에이터</li>
+	<li id="l2">타임아웃 런던</li>
+	<li id="l3">델마와 루이스</li>
+</ul> 
+<img src="mov.jpg">
+<div id="comm" style="position:absolute"></div>
+</body>
+</html>

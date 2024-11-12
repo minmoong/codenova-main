@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실전연습11</title>
+<style>
+span {
+	visibility : hidden;
+	color : red;
+}
+</style>
+<script>
+function show() {
+	var objArray = document.getElementsByTagName("span");
+	for(var i=0; i<objArray.length; i++) {
+		var obj = objArray[i];
+	    var style = window.getComputedStyle(obj);
+	    var v = style.getPropertyValue("visibility");
+		if(v == "hidden")
+			obj.style.visibility = "visible";
+		else
+			obj.style.visibility = "hidden";		
+	}
+}
+</script>
+</head>
+<body>
+<h3>오늘의 신나는 유머를 퀴즈로 풀어보자!!
+<button onclick="show()">정답보기</button>
+</h3>
+<hr>
+<ul>
+	<li>아무리 맛이 좋아도 소매치기는 절대로 먹지 않는 과자는? (<span>누네띠네</span>) 
+	<li>유리창이 15개인 집이 태풍으로 5개는 깨지고 10개만 남았다면, 그 짒을 어떻게 부를까요?
+		 (<span>윈도우 10 </span>) 
+	<li>일년내내 해만 따라다니며 취재하는 기자는? (<span>해리포터</span>)
+            <li>텔레토비에서 뽀가 멀리 떠나가면 어떻게 될까요? (<span>뽀빠이(bye)</span>)
+
+</ul>
+</body>
+</html>

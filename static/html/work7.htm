@@ -1,0 +1,73 @@
+<HTML><HEAD><TITLE>실전연습7:명언록제작</TITLE>
+ <STYLE type="text/css">
+     <!-- 내용의 출력 스타일 정의
+          .my {text-align:center; color:#ff3300; background-color:ff9966; font-size:10pt;
+           margin-left:50px; margin-right:50px}
+       -->
+ </STYLE>
+
+<SCRIPT LANGUAGE="JavaScript"> 
+<!--
+    nowDiv=0;  //nowDiv에 초기화
+    function initHidden(){
+      divNo=window.document.all.tags("DIV");
+      if (divNo!=null){
+         for (i=0; i<divNo.length; i++){
+           divNo[i].style.display="none";
+         }
+      }
+      showDiv(nowDiv);
+    }
+
+    function showDiv(nn){
+       // 클릭했을 경우 그에 맞게 시를 출력하는 함수
+       setDisplay (nameDiv(nowDiv), "none");
+       setDisplay (nameDiv(nn), "");
+       nowDiv=nn;
+    }
+
+    function nameDiv(nn){
+       name="div_"+ nn;
+       return name;
+    }
+
+    function setDisplay(Divid, cy){
+      document.all(Divid).style.display=cy;
+    }
+  //자바스크립트 끝-->  </SCRIPT></HEAD>
+<BODY onLoad="initHidden()"> 
+<div id="div_0"></div>
+<MARQUEE ALIGN=MIDDLE BEHAVIOR=ALTERNATE BGCOLOR="#990033" scrolldelay=120 DIRECTION=LEFT LOOP=INFINITE >
+    <font size=3 color= #ffcccc><b>생활 속의 모티베이션</b></font> 
+</MARQUEE>
+<p align="center"> 
+<table width=80%> 
+  <tr><td width=25% align=center><a href="#show1" onClick="showDiv(1)">
+          <INPUT TYPE=button Name="show1" VALUE="   천재란?   " LANGUAGE="Javacript"></a></td> 
+      <td width=25% align=center><a href="#show2" onClick="showDiv(2)"> 
+          <INPUT TYPE=button Name="show2" VALUE="   성공이란?  " LANGUAGE="Javacript"></a></td> 
+      <td width=25% align=center><a href="#show3" onClick="showDiv(3)"> 
+          <INPUT TYPE=button Name="show3" VALUE="   열정이란?  " LANGUAGE="Javacript"></a></td> 
+   
+  </tr></table>
+
+<hr size=10 color=#990033>
+<center>
+<a href="#show()" onClick="showDiv(0)"> 
+ <INPUT TYPE=button Name="show()" VALUE=" 처음부터" LANGUAGE="Javacript"></a>
+<div id="div_1"> 
+  <p class="my">
+   진정한 천재란, 비범한 일을 수행하는 능력을 가진 자가 아니라 평범한 일을 비범하게 수행하는 능력을 가진 자를 말한다.<br>
+ -  루이스 윌턴 </p></div>
+<div id="div_2">
+  <p class="my">
+  성공이란 당신이 가장 즐기는 일을 당신이 감탄하고 존경하는 사람들 속에서 당신이 가장 원하는 방식으로 행하는것이다.<br>
+- Brian Tracy
+
+ </p></div>
+<div id="div_3">
+  <p class="my">
+  어떤 일이든 열정만으로 90%의 문제를 해결할 수 있다.<br>
+- Donald Trumph 
+  </p></div></BODY></HTML>
+

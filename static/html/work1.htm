@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>실전예제1:미니계산기</title>
+    <script language="javascript">
+      var x;
+      function ch(x) {
+        n1 = eval(document.gg.f1.value);
+        n2 = eval(document.gg.f2.value);
+
+        if (x == 'a') {
+          n3 = n1 + n2;
+          document.gg.f3.value = n3;
+        } else if (x == 'b') {
+          n3 = n1 - n2;
+          document.gg.f3.value = n3;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <table border>
+        <form name="gg">
+          <caption>
+            미니 계산기
+          </caption>
+          <tr>
+            <td colspan="3">숫자1</td>
+            <td colspan="3"><input type="text" name="f1" /><br /></td>
+          </tr>
+          <tr>
+            <td colspan="3">숫자2</td>
+            <td colspan="3"><input type="text" name="f2" /><br /></td>
+          </tr>
+          <tr align="center">
+            <td colspan="3">
+              <input type="button" value=" + " onclick="ch('a')" ; />&nbsp;
+            </td>
+            <td colspan="3">
+              <input type="button" value=" - " onclick="ch('b')" ; />&nbsp;
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="3">결과 :</td>
+            <td colspan="3"><input type="text" name="f3" /><br /></td>
+          </tr>
+        </form>
+      </table>
+    </center>
+  </body>
+</html>
