@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
 
   let colors = ["blue", "red", "green", "yellow", "gray"];
-  let dang = ["민주당", "자한당", "바미당", "정의당", "무소속"];
+  let dang = ["국민의힘", "더불어민주당", "조국혁신당", "개혁신당", "진보당"];
   let values = [0, 0, 0, 0, 0]; // 각 당의 지지율을 담을 배열
   let canvas: HTMLCanvasElement | null = null;
   let context: CanvasRenderingContext2D | null = null;
