@@ -39,7 +39,7 @@
   }
 </style>
 
-<h3>웹 프로그래밍 Quiz</h3>
+<h2>컴퓨터 퀴즈!!</h2>
 <hr />
 
 <!-- Questions and Answers -->
