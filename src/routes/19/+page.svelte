@@ -44,29 +44,30 @@
 
 <!-- Questions and Answers -->
 <div>
-  <p>Q1. 월드와이드웹을 제안한 사람은 누구일까요?</p>
-  <button on:click={(e) => handleAnswer(e, '팀버너스리')}>정답</button>
+  <p>Q1. 웹 페이지를 구성할 때 사용하는 언어는 무엇인가요?</p>
+  <button on:click={(e) => handleAnswer(e, 'HTML')}>정답</button>
 </div>
 
 <div>
-  <p>Q2. 웹3.0의 기본정신은 무엇일까요?</p>
-  <button on:click={(e) => handleAnswer(e, '참여/공유/개방')}>정답</button>
+  <p>Q2. 프로그램이 어떤 조건에 따라 다른 동작을 하도록 만드는 것을 무엇이라고 하나요?</p>
+  <button on:click={(e) => handleAnswer(e, '조건문')}>정답</button>
 </div>
 
 <div>
-  <p>Q3. 웹3.0의 기본정신은 무엇일까요?</p>
-  <button on:click={(e) => handleAnswer(e, '참여/공유/개방')}>정답</button>
+  <p>Q3. 램은 중고상품이 2기가짜리밖에 없는 이유?</p>
+  <button on:click={(e) => handleAnswer(e, '4기가 애매하고 8기가 애매해서')}>정답</button>
 </div>
 
 <div>
-  <p>Q4. 무어의 법칙은 무엇일까요?</p>
-  <button on:click={(e) => handleAnswer(e, '반도체용량이 18개월마다 2배씩 증가')}>정답</button>
+  <p>Q4. 열명의 스님이 쉬면?</p>
+  <button on:click={(e) => handleAnswer(e, '열중쉬')}>정답</button>
 </div>
 
 <div>
-  <p>Q5. 혁신자의 딜레마를 주장한 사람은 누구일까요?</p>
-  <button on:click={(e) => handleAnswer(e, '크레이튼크리스텐슨')}>정답</button>
+  <p>Q5. 싸움을 잘하는 오리는?</p>
+  <button on:click={(e) => handleAnswer(e, '을지문덕')}>정답</button>
 </div>
+
 
 <div>
   <img src={cris} alt="크레이튼 크리스텐슨" width="400px" />

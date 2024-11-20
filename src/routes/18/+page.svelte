@@ -76,16 +76,16 @@
     type="number"
     bind:value={lineWidth}
     min="0"
-    max="50"
-    step="1"
+    max="1000"
+    step="5"
     on:change={updateLineWidth}
   />
 </label>
 <label>
   선 색:
-  <input type="color" bind:value={strokeColor} on:change={updateStrokeColor} />
+  <input type="color" bind:value={strokeColor} on:change={updateStrokeColor}/>
 </label>
 
 <br /><br />
 
-<canvas bind:this={canvas} width="300" height="400" style="background-color: ivory;"></canvas>
+<canvas bind:this={canvas} width="600" height="600" style="background-color: ivory;"></canvas>
