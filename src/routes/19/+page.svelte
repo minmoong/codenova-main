@@ -60,12 +60,12 @@
 
 <div>
   <p>Q4. 열명의 스님이 쉬면?</p>
-  <button on:click={(e) => handleAnswer(e, '열중쉬')}>정답</button>
+  <button on:click={(e) => handleAnswer(e, '열중쉬어')}>정답</button>
 </div>
 
 <div>
-  <p>Q5. 싸움을 잘하는 오리는?</p>
-  <button on:click={(e) => handleAnswer(e, '을지문덕')}>정답</button>
+  <p>Q5. PC방의 날씨는?</p>
+  <button on:click={(e) => handleAnswer(e, '갬')}>정답</button>
 </div>
 
 
