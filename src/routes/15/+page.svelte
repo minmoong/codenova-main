@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  let colors = ["blue", "red", "green", "yellow", "gray"];
-  let dang = ["국민의힘", "더불어민주당", "조국혁신당", "개혁신당", "진보당"];
-  let values = [0, 0, 0, 0, 0]; // 각 당의 지지율을 담을 배열
+  let colors = ["blue", "red", "green", "yellow", "gray", "skyblue", "purple"];
+  let dang = ["오해원", "제니", "카리나", "장원영", "하니", "쵸단", "이재진"];
+  let values = [0, 0, 0, 0, 0, 0, 0]; // 각 당의 지지율을 담을 배열
   let canvas: HTMLCanvasElement | null = null;
   let context: CanvasRenderingContext2D | null = null;
 
@@ -49,16 +49,16 @@
     context.fillStyle = "blue";
     values.forEach((value, i) => {
       const percentage = Math.floor((value * 100) / total);
-      context!.fillText(`${dang[i]} 지지율 ${percentage}% : ${colors[i]}`, 10, 30 + i * 16);
+      context!.fillText(`${dang[i]} 선호도 ${percentage}% : ${colors[i]}`, 10, 30 + i * 16);
     });
   }
 </script>
 
-<h3>정당별 지지율 조사 결과</h3>
+<h2>서고 축제에 오면 좋을 것 같은 연예인</h2>
 <hr />
 <div>
   {#each dang as party, i}
-    <label>{party} 지지
+    <label>{party}
       <input type="number" bind:value={values[i]} min="0" /> 명
     </label>
     <br />
